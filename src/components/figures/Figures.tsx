@@ -220,3 +220,52 @@ export function Pin() {
     </Wrap>
   );
 }
+
+
+
+/* ---- small line icons for feature grids ---- */
+function IconWrap({ children }: { children: ReactNode }) {
+  return (
+    <svg viewBox="0 0 32 32" className="h-7 w-7 stroke-amber fill-none" strokeWidth={1.6} xmlns="http://www.w3.org/2000/svg">
+      {children}
+    </svg>
+  );
+}
+
+export function IconEngineer() {
+  return (
+    <IconWrap>
+      <rect x="6" y="12" width="20" height="14" rx="1.5" />
+      <path d="M12 12V9a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v3" />
+      <line x1="6" y1="18" x2="26" y2="18" />
+    </IconWrap>
+  );
+}
+
+export function IconPerson() {
+  return (
+    <IconWrap>
+      <circle cx="16" cy="11" r="5" />
+      <path d="M6 27c0-5.5 4.5-9 10-9s10 3.5 10 9" />
+    </IconWrap>
+  );
+}
+
+export function IconShield() {
+  return (
+    <IconWrap>
+      <path d="M16 4 26 8v8c0 6-4.5 10-10 12C10.5 26 6 22 6 16V8Z" />
+      <path d="M11 16l3.5 3.5L21 12.5" />
+    </IconWrap>
+  );
+}
+
+export function IconGauge() {
+  return (
+    <IconWrap>
+      <circle cx="16" cy="16" r="11" />
+      <path d="M16 16 22 10" />
+      <circle cx="16" cy="16" r="1.6" className="fill-amber" />
+    </IconWrap>
+  );
+}
