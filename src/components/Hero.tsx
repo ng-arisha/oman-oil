@@ -20,7 +20,7 @@ export default function Hero({
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(60% 90% at 82% 0%, rgba(201,121,30,0.20), transparent 60%), radial-gradient(50% 70% at 100% 100%, rgba(47,111,107,0.18), transparent 60%)",
+            "radial-gradient(60% 90% at 82% 0%, rgba(224,72,54,0.22), transparent 60%), radial-gradient(50% 70% at 100% 100%, rgba(90,188,191,0.18), transparent 60%)",
         }}
       />
       <div className="relative mx-auto max-w-max px-5 pb-19 pt-24 sm:px-8">
@@ -31,14 +31,14 @@ export default function Hero({
           <span className="hero-line hero-line-delay">{lines[1]}</span>
         </h1>
 
-        <div className="hero-rule my-6.5 h-0.5 bg-amber" />
+        <div className="hero-rule my-6.5 h-0.5 bg-red" />
 
-        <p className="max-w-[52ch] text-lg font-normal text-[#d8d2c2]">{lead}</p>
+        <p className="max-w-[52ch] text-lg font-normal text-[#c9d0e6]">{lead}</p>
 
         <div className="mt-11 flex flex-wrap gap-6 sm:gap-12">
           {meta.map((m) => (
-            <div key={m.label} className="border-l border-[rgba(233,227,214,0.14)] pl-4">
-              <b className="block font-display text-xl text-amber sm:text-[28px]">{m.value}</b>
+            <div key={m.label} className="border-l border-[rgba(255,255,255,0.14)] pl-4">
+              <b className="block font-display text-xl text-red sm:text-[28px]">{m.value}</b>
               <span className="font-mono text-[11.5px] text-steel-on-dark">{m.label}</span>
             </div>
           ))}

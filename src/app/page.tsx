@@ -1,5 +1,14 @@
 import CtaBand from "@/components/CtaBand";
 import EsgTriad from "@/components/EsgTriad";
+import Hero from "@/components/Hero";
+import IconGrid from "@/components/IconGrid";
+import ImageCarousel from "@/components/ImageCarousel";
+import Manifest from "@/components/Manifest";
+import ProgressGrid from "@/components/ProgressGrid";
+import { Section, SectionHead, Split } from "@/components/Section";
+import SpecStrip from "@/components/SpecStrip";
+import StatRings from "@/components/StatRings";
+import ValueBlocks from "@/components/ValueBlocks";
 import {
   Distillation,
   Gauge,
@@ -12,15 +21,6 @@ import {
   Shield,
   Tank,
 } from "@/components/figures/Figures";
-import Hero from "@/components/Hero";
-import IconGrid from "@/components/IconGrid";
-import ImageCarousel from "@/components/ImageCarousel";
-import Manifest from "@/components/Manifest";
-import ProgressGrid from "@/components/ProgressGrid";
-import { Section, SectionHead, Split } from "@/components/Section";
-import SpecStrip from "@/components/SpecStrip";
-import StatRings from "@/components/StatRings";
-import ValueBlocks from "@/components/ValueBlocks";
 
 export default function HomePage() {
   return (
@@ -94,6 +94,7 @@ export default function HomePage() {
       <Section>
         <SectionHead eyebrow="What sets us apart" heading="Strategy, reliability, dependability" />
         <ValueBlocks
+          startIndex={2}
           items={[
             {
               heading: "Our strategy",
@@ -187,7 +188,7 @@ export default function HomePage() {
       <Section>
         <SectionHead eyebrow="Positioning" heading="Oman Oil Company is focused on you" />
         <div className="grid items-start gap-8 md:gap-14 lg:grid-cols-[1.15fr_0.85fr]">
-        <ImageCarousel
+          <ImageCarousel
             slides={[
               { src: "/images/carousel-1.webp", alt: "LNG storage tanks and valve manifold at a terminal", caption: "Terminal valve manifold — storage & loading" },
               { src: "/images/carousel-2.webp", alt: "Refinery towers at sunset behind green fields", caption: "Refining — crude through to finished grades" },
@@ -196,12 +197,12 @@ export default function HomePage() {
             ]}
           />
           <div className="prose">
-            <p className="mb-4 max-w-[52ch] text-[#332f26]">
+            <p className="mb-4 max-w-[52ch] text-[#23253f]">
               Oman Oil Company is a leading wholesale gasoline supplier serving Oman. We work to provide customers
               with the ideal blend of inexpensive, bulk fuel and secured supply and delivery, built on the
               cornerstone of exceptional service.
             </p>
-            <p className="max-w-[52ch] text-[#332f26]">
+            <p className="max-w-[52ch] text-[#23253f]">
               This includes wholesale gasoline and diesel as well as cost-saving price-management programmes like
               fixed price and firm price.
             </p>
@@ -292,7 +293,7 @@ export default function HomePage() {
       <Section dark>
         <div className="mb-10 flex flex-wrap items-end justify-between gap-8">
           <div>
-            <p className="mb-2.5 font-mono text-[12.5px] text-amber">Product range</p>
+            <p className="mb-2.5 font-mono text-[12.5px] text-red">Product range</p>
             <h2 className="max-w-[14ch] text-[26px] sm:text-[32px] lg:text-[38px]">Browse by grade</h2>
           </div>
           <p className="max-w-70 font-mono text-[12.5px] text-steel-on-dark">
@@ -336,8 +337,8 @@ export default function HomePage() {
 function CtaBandInline() {
   return (
     
-     <a href="/contact"
-      className="inline-flex items-center gap-2.5 border border-amber px-6.5 py-3.5 font-display text-[15px] text-amber hover:bg-amber hover:text-ink"
+      <a href="/contact"
+      className="inline-flex items-center gap-2.5 border border-red px-6.5 py-3.5 font-display text-[15px] text-red hover:bg-red hover:text-ink"
     >
       Contact us
     </a>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const hairline = "border-[color:rgba(233,227,214,0.14)]";
+const hairline = "border-[color:rgba(255,255,255,0.14)]";
 
 export default function Footer() {
   return (
@@ -10,9 +10,9 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-1">
             <span
               aria-hidden
-              className="mb-3.5 block h-6.5 w-5 rounded-bl-[60%] rounded-br-[60%] rounded-tr-[60%] bg-linear-to-br from-amber to-amber-deep"
+              className="mb-3.5 block h-6.5 w-5 rounded-bl-[60%] rounded-br-[60%] rounded-tr-[60%] bg-linear-to-br from-red to-red-deep"
             />
-            <p className="max-w-[34ch] text-[14.5px] text-[#c4beac]">
+            <p className="max-w-[34ch] text-[14.5px] text-[#b9c0d6]">
               Exploration, development and operation of onshore and offshore oil and gas fields in Oman and abroad
               &mdash; trading crude, refined fuels and bitumen with storage and transport across Europe and the Gulf.
             </p>
@@ -43,12 +43,12 @@ export default function Footer() {
 
           <div>
             <h4 className="mb-4 font-mono text-xs font-normal tracking-wide text-steel-on-dark">Head office</h4>
-            <p className="text-[14.5px] text-[#c4beac]">
+            <p className="text-[14.5px] text-[#b9c0d6]">
               Microdistrict 12, Building 79/1
               <br />
               Aktau, Mangistau Region
             </p>
-            <p className="mt-3 text-[14.5px] text-[#c4beac]">
+            <p className="mt-3 text-[14.5px] text-[#b9c0d6]">
               +77 47 465 8669
               <br />
               info@omanoilcompany.com
@@ -68,7 +68,7 @@ export default function Footer() {
 function FootLink({ href, label }: { href: string; label: string }) {
   return (
     <li>
-      <Link href={href} className="hover:text-amber">
+      <Link href={href} className="hover:text-red">
         {label}
       </Link>
     </li>

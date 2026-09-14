@@ -7,12 +7,12 @@ export default function IconGrid({ items }: { items: IconGridItem[] }) {
     <div className="grid gap-8 sm:grid-cols-2">
       {items.map((it) => (
         <div key={it.heading} className="flex gap-4">
-          <div className="flex h-12 w-12 flex-none items-center justify-center rounded-full border border-amber">
+          <div className="flex h-12 w-12 flex-none items-center justify-center rounded-full border border-red">
             {it.icon}
           </div>
           <div>
             <h3 className="mb-1.5 text-[18px]">{it.heading}</h3>
-            <p className="text-[14.5px] text-[#c4beac]">{it.text}</p>
+            <p className="text-[14.5px] text-[#b9c0d6]">{it.text}</p>
           </div>
         </div>
       ))}

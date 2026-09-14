@@ -1,4 +1,3 @@
-
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import type { Metadata } from "next";
@@ -39,7 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body>
         
          <a href="#main"
-          className="fixed -left-249.75 top-0 z-100 bg-amber px-4 py-2.5 text-ink focus:left-4 focus:top-4"
+          className="fixed -left-249.75 top-0 z-100 bg-red px-4 py-2.5 text-ink focus:left-4 focus:top-4"
         >
           Skip to content
         </a>

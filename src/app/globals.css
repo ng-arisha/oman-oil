@@ -1,18 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  /* colors */
-  --color-ink: #15130f;
-  --color-ink-soft: #201c15;
-  --color-paper: #eae3d4;
-  --color-paper-soft: #f3efe5;
-  --color-cream: #f6f3ec;
-  --color-amber: #c9791e;
-  --color-amber-deep: #93540f;
-  --color-teal: #2f6f6b;
-  --color-violet: #443461;
-  --color-steel: #85806f;
-  --color-steel-on-dark: #a9a291;
+  /* colors — sampled directly from the live site */
+  --color-ink: #0b0b3a;
+  --color-ink-soft: #12123f;
+  --color-paper: #f1fafa;
+  --color-paper-soft: #f6fbfc;
+  --color-cream: #ffffff;
+  --color-red: #e04836;
+  --color-red-deep: #a8331f;
+  --color-teal: #5abcbf;
+  --color-orange: #f19d38;
+  --color-wine: #9c2546;
+  --color-blue: #2d6ab0;
+  --color-steel: #6b7280;
+  --color-steel-on-dark: #a9b2c9;
 
   /* fonts — variables come from next/font in layout.tsx */
   --font-display: var(--font-oswald), sans-serif;
@@ -38,7 +40,7 @@
     letter-spacing: 0.2px;
   }
   :focus-visible {
-    outline: 2px solid var(--color-amber);
+    outline: 2px solid var(--color-red);
     outline-offset: 3px;
   }
 }

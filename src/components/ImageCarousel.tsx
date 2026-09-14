@@ -10,7 +10,7 @@ export default function ImageCarousel({ slides }: { slides: ImageSlide[] }) {
   const go = (dir: 1 | -1) => setIndex((i) => (i + dir + slides.length) % slides.length);
 
   return (
-    <div className="border border-[rgba(233,227,214,0.14)] bg-ink-soft p-2">
+    <div className="border border-[rgba(255,255,255,0.14)] bg-ink-soft p-2">
       <div className="relative aspect-4/3 w-full overflow-hidden">
         {slides.map((s, i) => (
           <Image
@@ -26,13 +26,13 @@ export default function ImageCarousel({ slides }: { slides: ImageSlide[] }) {
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0"
-          style={{ background: "linear-gradient(0deg, rgba(21,19,15,.55) 0%, transparent 35%)" }}
+          style={{ background: "linear-gradient(0deg, rgba(11,11,58,.55) 0%, transparent 35%)" }}
         />
         <button
           type="button"
           aria-label="Previous"
           onClick={() => go(-1)}
-          className="absolute left-2 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-ink/80 text-paper hover:bg-amber hover:text-ink"
+          className="absolute left-2 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-ink/80 text-paper hover:bg-red hover:text-ink"
         >
           &#8592;
         </button>
@@ -40,7 +40,7 @@ export default function ImageCarousel({ slides }: { slides: ImageSlide[] }) {
           type="button"
           aria-label="Next"
           onClick={() => go(1)}
-          className="absolute right-2 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-ink/80 text-paper hover:bg-amber hover:text-ink"
+          className="absolute right-2 top-1/2 -translate-y-1/2 flex h-9 w-9 items-center justify-center rounded-full bg-ink/80 text-paper hover:bg-red hover:text-ink"
         >
           &#8594;
         </button>
@@ -53,7 +53,7 @@ export default function ImageCarousel({ slides }: { slides: ImageSlide[] }) {
               key={s.src}
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => setIndex(i)}
-              className={`h-1.5 w-4 ${i === index ? "bg-amber" : "bg-[rgba(233,227,214,0.25)]"}`}
+              className={`h-1.5 w-4 ${i === index ? "bg-red" : "bg-[rgba(255,255,255,0.25)]"}`}
             />
           ))}
         </div>

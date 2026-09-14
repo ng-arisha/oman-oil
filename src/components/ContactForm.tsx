@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 
 const fieldClass =
-  "w-full border border-[color:rgba(21,19,15,0.13)] bg-paper-soft px-3.5 py-3 font-body text-[15px] text-ink focus:outline-2 focus:outline-amber";
+  "w-full border border-[color:rgba(11,11,58,0.13)] bg-paper-soft px-3.5 py-3 font-body text-[15px] text-ink focus:outline-2 focus:outline-red";
 const labelClass = "mb-1.5 block font-mono text-xs text-steel";
 
 export default function ContactForm() {

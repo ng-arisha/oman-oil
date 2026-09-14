@@ -14,7 +14,7 @@ export default function MobileNav() {
         aria-label="Open menu"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="md:hidden flex h-10.5 w-10.5 flex-col items-center justify-center gap-1.25 border border-[rgba(233,227,214,0.14)]"
+        className="md:hidden flex h-10.5 w-10.5 flex-col items-center justify-center gap-1.25 border border-[rgba(255,255,255,0.14)]"
       >
         <span className="block h-0.5 w-5 bg-paper" />
         <span className="block h-0.5 w-5 bg-paper" />
@@ -31,7 +31,7 @@ export default function MobileNav() {
               <Link
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="block border-b border-[rgba(233,227,214,0.14)] py-3.5 font-display text-xl text-paper"
+                className="block border-b border-[rgba(255,255,255,0.14)] py-3.5 font-display text-xl text-paper"
               >
                 {item.label}
               </Link>
@@ -42,7 +42,7 @@ export default function MobileNav() {
                       key={s.href}
                       href={s.href}
                       onClick={() => setOpen(false)}
-                      className="block border-b border-[rgba(233,227,214,0.14)] py-3 text-base text-steel-on-dark"
+                      className="block border-b border-[rgba(255,255,255,0.14)] py-3 text-base text-steel-on-dark"
                     >
                       {s.label}
                     </Link>

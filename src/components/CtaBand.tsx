@@ -14,12 +14,12 @@ export default function CtaBand({
   return (
     <section
       className="py-16 text-paper"
-      style={{ background: "linear-gradient(115deg, #15130f 0%, #2a2013 60%, #93540f 130%)" }}
+      style={{ background: "linear-gradient(115deg, #0b0b3a 0%, #3a1030 55%, #a8331f 130%)" }}
     >
       <div className="mx-auto flex max-w-max flex-wrap items-center justify-between gap-6 px-5 sm:px-8">
         <div>
           <h2 className="max-w-[16ch] text-2xl sm:text-[32px]">{heading}</h2>
-          {sub && <p className="mt-2 max-w-[44ch] text-[#d8d2c2]">{sub}</p>}
+          {sub && <p className="mt-2 max-w-[44ch] text-[#c9d0e6]">{sub}</p>}
         </div>
         <Link
           href={btnHref}
