@@ -23,7 +23,7 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <>
-      <HeroCarousel />
+      <HeroCarousel cta={true} />
 
       {/* About teaser + capability stats */}
       <Section>

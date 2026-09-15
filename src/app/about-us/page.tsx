@@ -1,61 +1,108 @@
-import CtaBand from "@/components/CtaBand";
-import { Grid, RouteMap } from "@/components/figures/Figures";
-import Hero from "@/components/Hero";
-import { Section, SectionHead, Split } from "@/components/Section";
+import {
+  IconClock,
+  IconGear,
+  IconHandshake,
+  IconStar,
+  IconThumbsUp,
+} from "@/components/figures/Figures";
+import HeroCarousel from "@/components/HeroCarousel";
+import { Section } from "@/components/Section";
+import StatRings from "@/components/StatRings";
+import ValueBlocks from "@/components/ValueBlocks";
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = { title: "About us" };
 
 export default function AboutUsPage() {
   return (
     <>
-      <Hero
-        crumb="About us"
-        lines={["A trading house built", "on the full barrel"]}
-        lead="Since 1979 we have supplied transport, commercial, jobber and government customers with wholesale fuels and bitumen — more than a billion gallons moved a year, with the paperwork and logistics handled end to end."
-        meta={[
-          { value: "1979", label: "founded" },
-          { value: "1bn+", label: "gallons supplied yearly" },
-          { value: "2", label: "core terminals" },
-        ]}
-      />
-
+      <HeroCarousel cta={false} title="About us" text="" />
       <Section>
-        <SectionHead
-          eyebrow="Overview"
-          heading="One supplier, the whole product list"
-          note="Crude oil, diesel, lubricants, aviation kerosene, LPG, bitumen, fuel oil, polypropylene and urea move through the same desk."
-        />
-        <Split
-          paragraphs={[
-            "We built the business around a single idea: a buyer shouldn't need five suppliers to cover a fuel programme. Crude oil, diesel fuel, lubricants, aviation kerosene, LPG, bitumen, fuel oil, polypropylene and urea all move through the same contracting and logistics desk.",
-            "That range only works with a route map behind it. Our supply corridors run through Asian markets on dedicated freight lanes, built specifically for petrochemical cargo rather than adapted from general freight.",
-          ]}
-          figure={<RouteMap />}
-          caption="Primary trade corridors — terminal to hub to port"
-        />
+        <div className="grid items-start gap-8 md:gap-14 lg:grid-cols-[1.15fr_0.85fr]">
+          <div>
+            <p className="mb-2.5 font-mono text-[12.5px] text-red-deep">
+              About us
+            </p>
+            <h2 className="mb-8 max-w-[14ch] text-[26px] sm:text-[32px] lg:text-[38px]">
+              Working to make fuel one less thing you have to worry about.
+            </h2>
+            <p className="mb-4 max-w-[62ch] text-[#23253f]">
+              Since 1979, we have concentrated on providing transportation,
+              commercial, jobber, and government customers with great service in
+              addition to turnkey wholesale gasoline and wholesale diesel fuels.
+              With more than a billion gallons supplied annually, our goal is to
+              simplify your job and, in the end, give you peace of mind.
+            </p>
+            <p className="max-w-[62ch] text-[#23253f]">
+              We are aware of the effect fuel has on your company and the
+              particular requirements you have. Because of this, we approach
+              each problem with a unique solution.
+            </p>
+          </div>
+          <div className="relative aspect-4/3 w-full overflow-hidden">
+            <Image
+              src="/images/about-refinery.jpg"
+              alt="Aerial night view of an illuminated oil refinery"
+              fill
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-cover rounded-lg"
+            />
+          </div>
+        </div>
+        <div className="mt-14">
+          <StatRings
+            items={[
+              { label: "Oil storage", value: 80 },
+              { label: "Distribution", value: 88 },
+              { label: "Marketing", value: 76 },
+              { label: "Exploration", value: 52 },
+            ]}
+          />
+        </div>
+        <div className="mt-14">
+          <ValueBlocks
+            items={[
+              {
+                heading: "Our key",
+                tone: "purple",
+                icon: <IconGear />,
+                text: "On the basis of good asset management of shareholders, ensuring the Company's development as one of the major vertically integrated producers of oil and gas, oil and gas processing, and petrochemical products.",
+              },
+              {
+                heading: "Our mission",
+                tone: "slate",
+                icon: <IconClock />,
+                text: "Our ambition is to expand our business in the oil and gas sector while reducing our environmental effect and boosting our social impact, drawing on our specific purpose and operational experience.",
+              },
+              {
+                heading: "Our vision",
+                tone: "green",
+                icon: <IconHandshake />,
+                text: "Our mission and operational skills in our business model enable us to expand our oil and gas company while reducing our environmental effects and raising social impact.",
+              },
+              {
+                heading: "Our strategy",
+                tone: "red",
+                icon: <IconStar />,
+                text: "In order to realize our vision of a world where sustainable living is the norm, we have invested in a long-term strategy of divisions and brands that generate growth for the good of all stakeholders.",
+              },
+              {
+                heading: "Reliability",
+                tone: "orange",
+                icon: <IconThumbsUp />,
+                text: "Oman Oil Company has a long history of delivering reliable results. We have a vast range of competencies in the petroleum industry and a leading collective global expertise in the subject.",
+              },
+              {
+                heading: "Dependable supplier",
+                tone: "wine",
+                icon: <IconHandshake />,
+                text: "A long history of reliability, a vast range of competencies in the petroleum industry, and a leading collective global expertise in the subject.",
+              },
+            ]}
+          />
+        </div>
       </Section>
-
-      <Section dark>
-        <SectionHead
-          eyebrow="Track record"
-          heading="Small fields, unbalanced systems, still delivered"
-          note="Field experience across regions with uneven infrastructure is where a trading desk earns its margin."
-          dark
-        />
-        <Split
-          dark
-          reverse
-          paragraphs={[
-            "Most of our operating experience comes from fields with unbalanced development systems — the kind of asset where standard playbooks don't apply. That's built familiarity with the specifics of working across very different regulatory and physical environments.",
-            "Long-term relationships with producers in Oman and abroad, paired with an internal IT system for contract and shipment tracking, let us offer customs clearance and integrated supply chain handling as one service rather than three separate vendors.",
-          ]}
-          figure={<Grid />}
-          caption="Coverage nodes across active trade regions"
-        />
-      </Section>
-
-      <CtaBand heading="Read our strategy and vision" btnText="Strategy and vision" btnHref="/strategy-and-vision" />
     </>
   );
 }

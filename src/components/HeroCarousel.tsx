@@ -13,7 +13,7 @@ const SLIDES = [
 
 const INTERVAL_MS = 5500;
 
-export default function HeroCarousel() {
+export default function HeroCarousel({title,text,cta}: {title?: string,text?: string,cta: boolean}) {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
@@ -63,22 +63,30 @@ export default function HeroCarousel() {
 
       <div className="relative z-1 mx-auto flex h-full max-w-max flex-col justify-end px-5 pb-16 sm:px-8 sm:pb-20">
         <h1 className="max-w-[18ch] overflow-hidden text-[32px] uppercase leading-[1.04] sm:text-[46px] lg:text-[58px]">
-          <span className="hero-line block">Oil &amp; and gas</span>
-          <span className="hero-line hero-line-delay block">refinery</span>
+          {title || (<>
+            <span className="hero-line block">Oil &amp; and gas</span>
+            <span className="hero-line hero-line-delay block">refinery</span>
+          </>)}
+          
         </h1>
 
         <div className="hero-rule my-5 h-0.5 bg-red sm:my-6" />
 
-        <p className="max-w-[52ch] text-base font-normal text-[#c9d0e6] sm:text-lg">
-          No matter how unpredictable the market becomes, Oman Oil Company is the company you can count on.
-        </p>
+       {
+        text ? <p className="max-w-[42ch] text-[15px] leading-normal sm:text-[17px]">{text}</p>:  <p className="max-w-[52ch] text-base font-normal text-[#c9d0e6] sm:text-lg">
+        No matter how unpredictable the market becomes, Oman Oil Company is the company you can count on.
+      </p>
+       }
 
-        <Link
-          href="/about-us"
-          className="mt-7 inline-flex w-fit items-center gap-2.5 border border-red px-6.5 py-3.5 font-display text-[15px] text-red hover:bg-red hover:text-ink sm:mt-8"
-        >
-          Learn more
-        </Link>
+        
+        {cta && (
+          <Link
+            href="/about-us"
+            className="mt-6 inline-block rounded-full bg-red px-6 py-3 text-[15px] font-semibold uppercase leading-none text-paper transition-colors hover:bg-red-deep sm:mt-8 sm:px-8 sm:py-4 sm:text-[17px] w-60"
+          >
+            Learn more
+          </Link>
+        )}
       </div>
     </section>
   );
