@@ -1,12 +1,28 @@
+"use client";
+
 import MobileNav from "@/components/MobileNav";
 import { NAV } from "@/lib/nav";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const hairline = "border-[color:rgba(255,255,255,0.14)]";
 
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b-2 border-red bg-ink">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 border-b-2 transition-colors duration-300 ${
+        scrolled ? "border-red bg-ink" : "border-transparent bg-transparent"
+      }`}
+    >
       <div className="mx-auto flex h-19 max-w-max items-center justify-between px-5 sm:px-8">
         <Link href="/" className="flex items-center gap-3 text-paper">
           <span

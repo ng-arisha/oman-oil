@@ -1,57 +1,63 @@
-import CtaBand from "@/components/CtaBand";
-import EsgTriad from "@/components/EsgTriad";
-import Hero from "@/components/Hero";
+import CardCarousel from "@/components/CardCarousel";
+import HeroCarousel from "@/components/HeroCarousel";
+import HoverRevealCard from "@/components/HoverRevealCard";
 import IconGrid from "@/components/IconGrid";
-import ImageCarousel from "@/components/ImageCarousel";
-import Manifest from "@/components/Manifest";
 import ProgressGrid from "@/components/ProgressGrid";
-import { Section, SectionHead, Split } from "@/components/Section";
-import SpecStrip from "@/components/SpecStrip";
+import { Section } from "@/components/Section";
 import StatRings from "@/components/StatRings";
 import ValueBlocks from "@/components/ValueBlocks";
 import {
-  Distillation,
-  Gauge,
+  IconClock,
   IconEngineer,
-  IconGauge,
+  IconGear,
+  IconHandshake,
   IconPerson,
+  IconPhone,
   IconShield,
-  Leaf,
-  RouteMap,
-  Shield,
-  Tank,
+  IconStar,
+  IconThumbsUp,
 } from "@/components/figures/Figures";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function HomePage() {
   return (
     <>
-      <Hero
-        crumb="Home"
-        lines={["Crude, fuels and bitumen,", "moved with precision"]}
-        lead="We trade, refine and store petroleum products across Oman and abroad — crude oil, diesel, kerosene, LPG and bitumen — backed by tank terminals in Rotterdam and Novorossiysk and a road fleet built for schedules that can't slip."
-        meta={[
-          { value: "900,000 t", label: "storage capacity" },
-          { value: "5,000+", label: "trucks in fleet" },
-          { value: "16", label: "terminals, owned & joint venture" },
-          { value: "1979", label: "in continuous trade" },
-        ]}
-      />
+      <HeroCarousel />
 
       {/* About teaser + capability stats */}
       <Section>
-        <SectionHead
-          eyebrow="About us"
-          heading="Working to reduce the stress you feel over fuel"
-          note="Since 1979, transportation, commercial, jobber and government customers have relied on us for turnkey wholesale gasoline and diesel."
-        />
-        <Split
-          paragraphs={[
-            "Since 1979, we have concentrated on providing transportation, commercial, jobber and government customers with great service, in addition to turnkey wholesale gasoline and wholesale diesel fuels. With more than a billion gallons supplied annually, our goal is to simplify your job and, in the end, give you peace of mind.",
-            "We are aware of the effect fuel has on your company and the particular requirements you have. Because of this, we approach each problem with a unique solution.",
-          ]}
-          figure={<Distillation />}
-          caption="Simplified atmospheric distillation — indicative cut points"
-        />
+        <div className="grid items-start gap-8 md:gap-14 lg:grid-cols-[1.15fr_0.85fr]">
+          <div>
+            <p className="mb-2.5 font-mono text-[12.5px] text-red-deep">
+              About us
+            </p>
+            <h2 className="mb-8 max-w-[14ch] text-[26px] sm:text-[32px] lg:text-[38px]">
+              Working to reduce the stress you feel over fuel
+            </h2>
+            <p className="mb-4 max-w-[62ch] text-[#23253f]">
+              Since 1979, we have concentrated on providing transportation,
+              commercial, jobber and government customers with great service, in
+              addition to turnkey wholesale gasoline and wholesale diesel fuels.
+              With more than a billion gallons supplied annually, our goal is to
+              simplify your job and, in the end, give you peace of mind.
+            </p>
+            <p className="max-w-[62ch] text-[#23253f]">
+              We are aware of the effect fuel has on your company and the
+              particular requirements you have. Because of this, we approach
+              each problem with a unique solution.
+            </p>
+          </div>
+          <div className="relative aspect-4/3 w-full overflow-hidden">
+            <Image
+              src="/images/about-refinery.jpg"
+              alt="Aerial night view of an illuminated oil refinery"
+              fill
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-cover rounded-lg"
+            />
+          </div>
+        </div>
         <div className="mt-14">
           <StatRings
             items={[
@@ -62,285 +68,342 @@ export default function HomePage() {
             ]}
           />
         </div>
-      </Section>
-
-      {/* Our Key / Mission / Vision */}
-      <Section dark>
-        <SectionHead
-          eyebrow="Direction"
-          heading="Our key, mission and vision"
-          note="What guides the shareholders, the business model, and the growth plan."
-          dark
-        />
-        <ValueBlocks
-          items={[
-            {
-              heading: "Our key",
-              text: "On the basis of good asset management of shareholders, ensuring the Company's development as one of the major vertically integrated producers of oil and gas, oil and gas processing, and petrochemical products.",
-            },
-            {
-              heading: "Our mission",
-              text: "Our ambition is to expand our business in the oil and gas sector while reducing our environmental effect and boosting our social impact, drawing on our specific purpose and operational experience.",
-            },
-            {
-              heading: "Our vision",
-              text: "Our mission and operational skills in our business model enable us to expand our oil and gas company while reducing our environmental effects and raising social impact.",
-            },
-          ]}
-        />
-      </Section>
-
-      {/* Our Strategy / Reliability / Dependable Supplier */}
-      <Section>
-        <SectionHead eyebrow="What sets us apart" heading="Strategy, reliability, dependability" />
-        <ValueBlocks
-          startIndex={2}
-          items={[
-            {
-              heading: "Our strategy",
-              text: "In order to realize our vision of a world where sustainable living is the norm, we have invested in a long-term strategy of divisions and brands that generate growth for the good of all stakeholders.",
-            },
-            {
-              heading: "Reliability",
-              text: "Oman Oil Company has a long history of delivering reliable results. We have a vast range of competencies in the petroleum industry and a leading collective global expertise in the subject.",
-            },
-            {
-              heading: "Dependable supplier",
-              text: "A long history of reliability, a vast range of competencies in the petroleum industry, and a leading collective global expertise in the subject.",
-            },
-          ]}
-        />
-      </Section>
-
-      {/* Secured Supply */}
-      <Section dark>
-        <SectionHead
-          eyebrow="Logistics"
-          heading="Secured supply"
-          note="Delivery is guaranteed even during times of national emergency — customer service runs 24/7/365."
-          dark
-        />
-        <Split
-          dark
-          paragraphs={[
-            "Our skilled staff is committed to assisting you in achieving your objective, and our transportation network provides you with the best combination of affordable and secure supply and delivery throughout the Oman region.",
-            "Long-haul deliveries, wet-hosing coordination for off-site vehicles or equipment, temporary tank placement, and dedicated truck services are all standing capabilities that can be used in response to emergency supply outages.",
-            "The coast-to-coast supply and logistics network provides pipeline shipment via direct terminal access or delivery, with intraday market trends examined to determine the best delivery windows while keeping abreast of developments that could shake the market.",
-          ]}
-          figure={<RouteMap />}
-          caption="Terminal → gantry → depot → customer"
-        />
-        <div className="mt-10">
-          <CtaBandInline />
+        <div className="mt-14">
+          <ValueBlocks
+            items={[
+              {
+                heading: "Our key",
+                tone: "purple",
+                icon: <IconGear />,
+                text: "On the basis of good asset management of shareholders, ensuring the Company's development as one of the major vertically integrated producers of oil and gas, oil and gas processing, and petrochemical products.",
+              },
+              {
+                heading: "Our mission",
+                tone: "slate",
+                icon: <IconClock />,
+                text: "Our ambition is to expand our business in the oil and gas sector while reducing our environmental effect and boosting our social impact, drawing on our specific purpose and operational experience.",
+              },
+              {
+                heading: "Our vision",
+                tone: "green",
+                icon: <IconHandshake />,
+                text: "Our mission and operational skills in our business model enable us to expand our oil and gas company while reducing our environmental effects and raising social impact.",
+              },
+              {
+                heading: "Our strategy",
+                tone: "red",
+                icon: <IconStar />,
+                text: "In order to realize our vision of a world where sustainable living is the norm, we have invested in a long-term strategy of divisions and brands that generate growth for the good of all stakeholders.",
+              },
+              {
+                heading: "Reliability",
+                tone: "orange",
+                icon: <IconThumbsUp />,
+                text: "Oman Oil Company has a long history of delivering reliable results. We have a vast range of competencies in the petroleum industry and a leading collective global expertise in the subject.",
+              },
+              {
+                heading: "Dependable supplier",
+                tone: "wine",
+                icon: <IconHandshake />,
+                text: "A long history of reliability, a vast range of competencies in the petroleum industry, and a leading collective global expertise in the subject.",
+              },
+            ]}
+          />
         </div>
       </Section>
 
-      {/* Environmental / Social / Governance */}
-      <Section>
-        <SectionHead
-          eyebrow="Sustainability"
-          heading="Environmental, social, governance"
-          note="Growth and impact, managed against the same set of internal metrics."
-        />
-        <EsgTriad
-          items={[
-            {
-              label: "Environmental",
-              text: "Terminal safety management systems are inspected annually by local authorities at every site we operate, with efficiency and emissions intensity tracked against the same metrics as growth.",
-              figure: <Leaf />,
-            },
-            {
-              label: "Social",
-              text: "Our activities include a significant portion of social policy and charity — supporting culture, national values and community sport, and raising living standards where we operate.",
-              figure: <Tank />,
-            },
-            {
-              label: "Governance",
-              text: "A Board and advisory group with long track records across finance and Oil & Gas project delivery oversee the Company's development and stakeholder reporting.",
-              figure: <Shield />,
-            },
-          ]}
-        />
+      {/* Secured Supply */}
+      {/* Secured Supply */}
+      <Section white>
+        <div className="grid items-start gap-8 md:gap-14 lg:grid-cols-[1.15fr_0.85fr]">
+          <div>
+            <h2 className="mb-6 text-[26px] uppercase text-red sm:text-[32px] lg:text-[38px]">
+              Secured supply
+            </h2>
+            <p className="mb-4 max-w-[58ch] text-[#23253f]">
+              Our skilled staff is committed to assisting you in achieving your
+              objective, and our vast transportation network provides you with
+              the best combination of affordable and secure supply and delivery
+              throughout the Oman region.
+            </p>
+            <p className="mb-4 max-w-[58ch] text-[#23253f]">
+              Even during times of national emergency, delivery is guaranteed
+              and customer service is available 24/7/365.
+            </p>
+            <p className="mb-4 max-w-[58ch] text-[#23253f]">
+              Long-haul deliveries, wet-hosing coordination for off-site
+              vehicles or equipment, temporary tank placement, and dedicated
+              truck services are all capabilities that can be used in response
+              to emergency supply outages.
+            </p>
+            <p className="mb-4 max-w-[58ch] text-[#23253f]">
+              The coast-to-coast supply and logistics network provides pipeline
+              shipment via direct terminal access or delivery.
+            </p>
+            <p className="mb-8 max-w-[58ch] text-[#23253f]">
+              Intraday market trends are examined to determine the best delivery
+              windows and dates, while keeping abreast of developments that
+              could shake the market.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center rounded-full border-2 border-red px-7 py-3 font-display text-[15px] text-red hover:bg-red hover:text-white"
+            >
+              Contact us
+            </Link>
+          </div>
+          <div className="overflow-hidden">
+            <div className="h-32 bg-teal sm:h-40" />
+            <div className="relative aspect-[4/3] w-full">
+              <Image
+                src="/images/secured-supply.jpg"
+                alt="Engineer descending stairs beside an insulated pipeline in the snow"
+                fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="h-32 bg-teal sm:h-40" />
+          </div>
+        </div>
+        <div className="mt-14 grid gap-4 sm:grid-cols-3">
+          <HoverRevealCard
+            src="/images/esg-environmental.webp"
+            alt="Oil rig and tanker at sea"
+            title="Environmental"
+            text="Successful experience in profitable operations in small fields with unbalanced development systems; knowledge of the specifics of work in various regions of the world. Extensive experience in the implementation of international oil and gas projects, stable long-term relations with leading oil companies in Oman, and the world entirely, conducting research and distinctively impact synergistic experiences."
+          />
+          <HoverRevealCard
+            src="/images/about-refinery.jpg"
+            alt="Aerial night view of an illuminated oil refinery"
+            title="Social"
+            text="The activities of Oman Oil Company includes a significant portion of social policy and charity. The company kept a close on initiatives in 2019 that supported culture, preserved and revived Oman national values and spiritual legacy, promoted and integrated Oman art into the global cultural landscape, and advanced mass and high-performance sports. Oman Oil Company undertakes projects to raise living standards and maintain the unique cultural identity of Oman citizens and enters into agreements with local governments within the company's geographic footprint."
+          />
+          <HoverRevealCard
+            src="/images/esg-national-value.webp"
+            alt="Industrial storage tanks under a clear sky"
+            title="National value"
+            text="The activities of Oman Oil Company includes a significant portion of social policy and charity. The company kept a close on initiatives in 2019 that supported culture, preserved and revived Oman national values and spiritual legacy, promoted and integrated Oman art into the global cultural landscape, and advanced mass and high-performance sports. Oman Oil Company undertakes projects to raise living standards and maintain the unique cultural identity of Oman citizens and enters into agreements with local governments within the company's geographic footprint."
+          />
+        </div>
       </Section>
 
       {/* Low Cost */}
-      <Section dark>
-        <SectionHead
-          eyebrow="Pricing"
-          heading="Low cost, held for decades"
-          note="More than 30 years of cost-management expertise, built into every price-management plan."
-          dark
-        />
-        <Split
-          dark
-          reverse
-          paragraphs={[
-            "We provide price-management plans that enable customers to boost earnings by reducing gasoline expenses, thanks to more than 30 years of cost-management expertise.",
-            "Price-management strategies limit the impact of supply shortages, eliminate the volatility of fuel cost charges, and safeguard predictable budgets — with price protection, ongoing discounts, 365-day dispatch access and customised delivery follow-ups.",
-            "Technology support, including specialised reporting and industry analytics, plus repeated daily remote tank checks, saves time and money and guards against fuel shortages before they happen.",
-          ]}
-          figure={<Gauge />}
-          caption="Reference price vs. fixed contract price — illustrative"
-        />
+      {/* Low Cost */}
+      <Section white>
+        <div className="grid items-start gap-8 md:gap-14 lg:grid-cols-[1.15fr_0.85fr]">
+          <div>
+            <h2 className="mb-6 text-[26px] uppercase text-red sm:text-[32px] lg:text-[38px]">
+              Low cost
+            </h2>
+            <p className="mb-4 max-w-[58ch] text-[#23253f]">
+              We can provide price-management plans that enable customers to
+              boost earnings by reducing gasoline expenses thanks to our more
+              than 30 years of cost management expertise.
+            </p>
+            <p className="mb-4 max-w-[58ch] text-[#23253f]">
+              Price-management strategies that limit the impact of supply
+              shortages, eliminate the volatility of fuel cost charges, and
+              safeguard and deliver predictable budgets.
+            </p>
+            <p className="mb-4 max-w-[58ch] text-[#23253f]">
+              Price protection, ongoing discounts, 365 days a year dispatch
+              access, and customized delivery follow-ups.
+            </p>
+            <p className="mb-4 max-w-[58ch] text-[#23253f]">
+              Technology support, including specialized reporting and
+              cutting-edge industry analytics.
+            </p>
+            <p className="max-w-[58ch] text-[#23253f]">
+              To save time, money, and to guard against fuel shortages, repeated
+              daily remote tank checks are performed.
+            </p>
+          </div>
+          <div className="group relative aspect-16/10 w-full overflow-hidden rounded-lg">
+            <Image
+              src="/images/low-cost.jpg"
+              alt="Refinery lit at dusk, reflected in water"
+              fill
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-cover"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 [clip-path:inset(0_100%_0_0)] transition-[clip-path] duration-700 ease-out group-hover:[clip-path:inset(0_0%_0_0)]"
+            >
+              <Image
+                src="/images/low-cost.jpg"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+                style={{
+                  filter:
+                    "sepia(0.5) hue-rotate(175deg) saturate(2.4) brightness(0.92)",
+                }}
+              />
+            </div>
+          </div>
+        </div>
       </Section>
 
       {/* Focused on you — carousel */}
+      {/* Focused on you */}
       <Section>
-        <SectionHead eyebrow="Positioning" heading="Oman Oil Company is focused on you" />
-        <div className="grid items-start gap-8 md:gap-14 lg:grid-cols-[1.15fr_0.85fr]">
-          <ImageCarousel
+        <div className="grid items-center gap-10 md:gap-14 lg:grid-cols-[0.9fr_1.1fr]">
+          <CardCarousel
             slides={[
-              { src: "/images/carousel-1.webp", alt: "LNG storage tanks and valve manifold at a terminal", caption: "Terminal valve manifold — storage & loading" },
-              { src: "/images/carousel-2.webp", alt: "Refinery towers at sunset behind green fields", caption: "Refining — crude through to finished grades" },
-              { src: "/images/carousel-3.png", alt: "Aerial view of a snow-covered industrial facility", caption: "Novorossiysk-region facility, winter operations" },
-              { src: "/images/carousel-4.jpg", alt: "Aerial view of a riverside refinery and tank farm", caption: "Tank farm and refinery, riverside terminal" },
+              {
+                src: "/images/focused-1.webp",
+                alt: "Storage tanks with a tanker truck parked alongside",
+              },
+              {
+                src: "/images/focused-2.webp",
+                alt: "Storage tanks with a tanker truck parked alongside",
+              },
+              {
+                src: "/images/focused-3.webp",
+                alt: "Pipeline valves and manifold at a terminal",
+              },
+              {
+                src: "/images/focused-4.webp",
+                alt: "Oil rig and supply vessel at sunset",
+              },
             ]}
           />
-          <div className="prose">
-            <p className="mb-4 max-w-[52ch] text-[#23253f]">
-              Oman Oil Company is a leading wholesale gasoline supplier serving Oman. We work to provide customers
-              with the ideal blend of inexpensive, bulk fuel and secured supply and delivery, built on the
-              cornerstone of exceptional service.
+          <div>
+            <p
+              className="font-display text-[26px] sm:text-[32px]"
+              style={{ color: "#09105c" }}
+            >
+              The
             </p>
-            <p className="max-w-[52ch] text-[#23253f]">
-              This includes wholesale gasoline and diesel as well as cost-saving price-management programmes like
-              fixed price and firm price.
+            <h2 className="mb-2 font-display text-[32px] uppercase text-red sm:text-[42px]">
+              Oman Oil Company
+            </h2>
+            <p
+              className="mb-6 font-display text-[26px] sm:text-[32px]"
+              style={{ color: "#09105c" }}
+            >
+              Is Focused On You
+            </p>
+            <p className="max-w-[58ch] text-[#23253f]">
+              Oman Oil Company is the largest pure wholesale gasoline seller in
+              the Oman. We work hard to provide customers with the ideal blend
+              of inexpensive, bulk fuel and secured supply and delivery
+              throughout the Oman Federation — all built on the cornerstone of
+              exceptional service. This includes wholesale gasoline and diesel
+              as well as cost-saving price-management programs like fixed price
+              and firm price.
             </p>
           </div>
         </div>
       </Section>
 
       {/* Why Choose Us */}
-      <Section dark>
-        <SectionHead
-          eyebrow="Why choose us"
-          heading="What buyers get from working with us"
-          note="Full cooperation with major laboratories means buyers can independently verify what they've bought."
-          dark
-        />
-        <IconGrid
-          items={[
-            {
-              icon: <IconEngineer />,
-              heading: "Expert engineers",
-              text: "Complemented by several organisations with long-lasting experience in Oil & Gas — mainly engineering, refining and trading.",
-            },
-            {
-              icon: <IconPerson />,
-              heading: "Experience & skills",
-              text: "The management team is supported by a Board of Directors and Advisors with deep track records in finance and Oil & Gas projects.",
-            },
-            {
-              icon: <IconShield />,
-              heading: "Guarantee of service",
-              text: "In-depth knowledge of Oil and Gas production, combined with Board and management experience, to deliver well-refined products.",
-            },
-            {
-              icon: <IconGauge />,
-              heading: "Scheduled production",
-              text: "A 200,000 barrel-per-day modular crude oil refinery plant is moving forward on the basis of a full techno-economic feasibility study.",
-            },
-          ]}
-        />
-      </Section>
+      {/* Why Choose Us */}
+      <section className="relative overflow-hidden border-t border-[rgba(255,255,255,0.14)] py-19 text-paper">
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/images/about-refinery.jpg"
+            alt="Aerial night view of an illuminated oil refinery"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-ink/80" />
+        </div>
+        <div className="mx-auto max-w-max px-5 sm:px-8">
+          <h2 className="mb-6 text-[26px] uppercase sm:text-[32px] lg:text-[38px]">
+            Why choose us
+          </h2>
+          <p className="mb-14 max-w-[80ch] text-[#c9d0e6]">
+            We guarantee high quality of petroleum and gas products that we
+            supply globally! We have been in full cooperation with the largest
+            companies and laboratories in the country, our Buyers have unique
+            opportunity to quickly and efficiently carry out further analysis of
+            the acquired oil.
+          </p>
+          <IconGrid
+            items={[
+              {
+                icon: <IconEngineer />,
+                heading: "Expert engineers",
+                text: "Complemented by several organisations with long-lasting experience in Oil & Gas — mainly engineering, refining and trading.",
+              },
+              {
+                icon: <IconPerson />,
+                heading: "Experience & skills",
+                text: "The management team is supported by a Board of Directors and Advisors with deep track records in finance and Oil & Gas projects.",
+              },
+              {
+                icon: <IconPhone />,
+                heading: "Guarantee service",
+                text: "In-depth knowledge of Oil and Gas production, combined with Board and management experience, to deliver well-refined products.",
+              },
+              {
+                icon: <IconShield />,
+                heading: "Schedule productions",
+                text: "A 200,000 barrel-per-day modular crude oil refinery plant is moving forward on the basis of a full techno-economic feasibility study.",
+              },
+            ]}
+          />
+        </div>
+      </section>
 
       {/* Work Experience */}
       <Section>
-        <SectionHead eyebrow="Track record" heading="Work experience" />
+        <h2 className="mb-14 text-center text-[26px] uppercase text-red sm:text-[32px] lg:text-[38px]">
+          Work experience
+        </h2>
+
         <ProgressGrid
           items={[
             {
               heading: "Transport of products by railway",
-              text: "Railway shipment of petroleum products, organised professionally and moved through transport that complies with both Oman and international legal requirements.",
-              pillLabel: "Railway transportation",
-              value: 82,
+              text: [
+                "Organized the railway shipment of any petroleum products in a professional manner.",
+                "The materials are moved through railroad transport that complies with both Oman and international legal requirements as well as recognized norms and standards, making it possible to guarantee the entire safety of petroleum product transportation.",
+              ],
+              pillLabel: "Railway Transportation",
+              value: 77,
             },
             {
               heading: "Storage and loading",
-              text: "Strong partnerships with storage-facility owners across Oman, authorised to store and trade a range of clean petroleum products — leased exclusively or under a sharing agreement.",
-              pillLabel: "Storage and loading",
-              value: 88,
+              text: [
+                "We have strong partnerships with owners of Storage Facility across Oman through our networks. The Department of Petroleum Resources (DPR) has fully authorized these storage facilities to store and trade a range of clean petroleum products. The facilities can be leased exclusively or under a sharing agreement.",
+              ],
+              pillLabel: "Storage and Loading",
+              value: 83,
             },
             {
               heading: "Management",
-              text: "In charge of privately owned tank storage in Oman and other world-safe ports outside the jurisdiction of oil giants, billing companies for handling and storage.",
+              text: [
+                "Our management is in charge of privately owned tank storage in Oman, and other world-safe ports that are not under the jurisdiction of oil giants. Our management bills all oil companies for the expenses related to handling and storing their products.",
+              ],
               pillLabel: "Management",
-              value: 70,
+              value: 92,
             },
             {
               heading: "Dependable vendor",
-              text: "A long history of reliability, with a vast range of competencies in the petroleum industry and leading collective global expertise.",
-              pillLabel: "Dependable vendor",
-              value: 85,
-            },
-            {
-              heading: "Reliability",
-              text: "A long history of delivering reliable results, with a vast range of competencies in the petroleum industry.",
-              pillLabel: "Reliability",
-              value: 90,
-            },
-            {
-              heading: "Modern equipment",
-              text: "Investment in modern equipment and innovation to gradually reduce the consumption of natural resources, materials and energy while maintaining maximum output.",
-              pillLabel: "Modern equipment",
-              value: 78,
+              text: [
+                "Oman Oil Company has a long history of reliability. We have a vast range of competencies in the petroleum industry and a leading collective global expertise in the subject.",
+              ],
+              pillLabel: "Dependable Vendor",
+              value: 73,
             },
           ]}
         />
+      
       </Section>
 
-      {/* Product manifest */}
-      <Section dark>
-        <div className="mb-10 flex flex-wrap items-end justify-between gap-8">
-          <div>
-            <p className="mb-2.5 font-mono text-[12.5px] text-red">Product range</p>
-            <h2 className="max-w-[14ch] text-[26px] sm:text-[32px] lg:text-[38px]">Browse by grade</h2>
-          </div>
-          <p className="max-w-70 font-mono text-[12.5px] text-steel-on-dark">
-            Specifications, typical uses and standards for each product.
-          </p>
-        </div>
-        <Manifest
-          dark
-          items={[
-            { tag: "01", name: "Oil and gas", desc: "Crude oil and natural gas supply, upstream to midstream.", href: "/oil-and-gas" },
-            { tag: "02", name: "Bitumen", desc: "Road, airport and roofing grades, oxidised and straight-run.", href: "/bitumen" },
-            { tag: "03", name: "Kerosene", desc: "Aviation and heating grades under lab-verified specification.", href: "/kerosene" },
-            { tag: "04", name: "Gasoline AI-92", desc: "Unleaded RON 92 for the passenger vehicle market.", href: "/gasoline-ai-92" },
-            { tag: "05", name: "DT analogs", desc: "Summer, winter and arctic diesel fuel equivalents.", href: "/dt-analogs" },
-          ]}
-        />
-      </Section>
+     
 
-      <Section>
-        <SectionHead eyebrow="Why buyers stay" heading="What holds the supply chain together" />
-        <SpecStrip
-          items={[
-            { num: "A", heading: "Expert engineers", text: "Refining and trading specialists drawn from established Oil & Gas organisations, not generalist brokers." },
-            { num: "B", heading: "Board experience", text: "A Board and advisory group with long track records across finance and Oil & Gas project delivery." },
-            { num: "C", heading: "Guaranteed service", text: "Combined technical knowledge and management practice, built into every refined product we release." },
-            { num: "D", heading: "Scheduled production", text: "A 200,000 barrel-per-day modular refinery is moving through feasibility toward construction." },
-          ]}
-        />
-      </Section>
+     
 
-      <CtaBand
-        heading="Talk to us about a supply schedule"
-        sub="Our team responds with indicative pricing and lead times, usually within two working days."
-        btnText="Contact the desk"
-        btnHref="/contact"
-      />
+     
     </>
   );
 }
 
-function CtaBandInline() {
-  return (
-    
-      <a href="/contact"
-      className="inline-flex items-center gap-2.5 border border-red px-6.5 py-3.5 font-display text-[15px] text-red hover:bg-red hover:text-ink"
-    >
-      Contact us
-    </a>
-  );
-}
+

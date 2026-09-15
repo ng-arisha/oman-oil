@@ -267,3 +267,67 @@ export function IconGauge() {
     </IconWrap>
   );
 }
+
+
+/* ---- white badge icons for value cards (sit on colored backgrounds) ---- */
+function BadgeIconWrap({ children }: { children: ReactNode }) {
+  return (
+    <svg viewBox="0 0 32 32" className="h-6 w-6 stroke-white fill-none" strokeWidth={1.6} xmlns="http://www.w3.org/2000/svg">
+      {children}
+    </svg>
+  );
+}
+
+export function IconGear() {
+  return (
+    <BadgeIconWrap>
+      <circle cx="16" cy="16" r="4.5" />
+      <path d="M16 6v3M16 23v3M26 16h-3M9 16H6M22.6 9.4l-2.1 2.1M11.5 20.5l-2.1 2.1M22.6 22.6l-2.1-2.1M11.5 11.5 9.4 9.4" />
+    </BadgeIconWrap>
+  );
+}
+
+export function IconClock() {
+  return (
+    <BadgeIconWrap>
+      <circle cx="16" cy="16" r="11" />
+      <path d="M16 9v7l5 3" />
+    </BadgeIconWrap>
+  );
+}
+
+export function IconHandshake() {
+  return (
+    <BadgeIconWrap>
+      <path d="M4 15l5-4 4 3 3-2 5 3.5" />
+      <path d="M9 11l6 5.5c1 1 2.6 1 3.5-.2.7-.9.6-2.2-.3-3L14 9" />
+      <path d="M4 15v4l4 3M28 16l-5-3.5v4l-4 3" />
+    </BadgeIconWrap>
+  );
+}
+
+export function IconStar() {
+  return (
+    <BadgeIconWrap>
+      <path d="M16 6l3 6.5 7 1-5.2 4.9L22.4 25 16 21.3 9.6 25l1.6-6.6L6 13.5l7-1z" />
+    </BadgeIconWrap>
+  );
+}
+
+export function IconThumbsUp() {
+  return (
+    <BadgeIconWrap>
+      <path d="M11 14v12H7a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h4Z" />
+      <path d="M11 14l4.5-8c1.4 0 2.5 1.3 2.2 2.7L17 12h6.5c1.4 0 2.4 1.4 2 2.7l-2.4 8.3c-.3 1.2-1.4 2-2.6 2H11" />
+    </BadgeIconWrap>
+  );
+}
+
+
+export function IconPhone() {
+  return (
+    <IconWrap>
+      <path d="M9 5h4l2 5-3 2c1.2 3 3.8 5.6 6.8 6.8l2-3 5 2v4c0 1.1-.9 2-2 2C15.6 27.8 4.2 16.4 4 9c0-1.1.9-2 2-2Z" />
+    </IconWrap>
+  );
+}

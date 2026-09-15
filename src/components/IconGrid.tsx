@@ -7,7 +7,7 @@ export default function IconGrid({ items }: { items: IconGridItem[] }) {
     <div className="grid gap-8 sm:grid-cols-2">
       {items.map((it) => (
         <div key={it.heading} className="flex gap-4">
-          <div className="flex h-12 w-12 flex-none items-center justify-center rounded-full border border-red">
+          <div className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-white">
             {it.icon}
           </div>
           <div>

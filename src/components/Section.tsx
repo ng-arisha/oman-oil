@@ -2,10 +2,12 @@ import type { ReactNode } from "react";
 
 export function Section({
   dark = false,
+  white = false,
   id,
   children,
 }: {
   dark?: boolean;
+  white?: boolean;
   id?: string;
   children: ReactNode;
 }) {
@@ -15,7 +17,7 @@ export function Section({
       className={
         dark
           ? "border-t border-[rgba(255,255,255,0.14)] bg-ink py-19 text-paper"
-          : "border-t border-[rgba(11,11,58,0.13)] py-19"
+          : `border-t border-[rgba(11,11,58,0.13)] py-19 ${white ? "bg-cream" : ""}`
       }
     >
       <div className="mx-auto max-w-max px-5 sm:px-8">{children}</div>

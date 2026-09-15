@@ -1,4 +1,4 @@
-const COLORS = ["#c9791e", "#2f6f6b", "#93540f", "#443461"];
+const COLORS = ["#ed9cbd", "#b6ca56", "#f2ab49", "#8bd7df"];
 
 export type StatRingItem = { label: string; value: number };
 
