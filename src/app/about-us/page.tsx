@@ -1,14 +1,5 @@
-import {
-  IconClock,
-  IconGear,
-  IconHandshake,
-  IconStar,
-  IconThumbsUp,
-} from "@/components/figures/Figures";
 import HeroCarousel from "@/components/HeroCarousel";
 import { Section } from "@/components/Section";
-import StatRings from "@/components/StatRings";
-import ValueBlocks from "@/components/ValueBlocks";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -50,58 +41,8 @@ export default function AboutUsPage() {
             />
           </div>
         </div>
-        <div className="mt-14">
-          <StatRings
-            items={[
-              { label: "Oil storage", value: 80 },
-              { label: "Distribution", value: 88 },
-              { label: "Marketing", value: 76 },
-              { label: "Exploration", value: 52 },
-            ]}
-          />
-        </div>
-        <div className="mt-14">
-          <ValueBlocks
-            items={[
-              {
-                heading: "Our key",
-                tone: "purple",
-                icon: <IconGear />,
-                text: "On the basis of good asset management of shareholders, ensuring the Company's development as one of the major vertically integrated producers of oil and gas, oil and gas processing, and petrochemical products.",
-              },
-              {
-                heading: "Our mission",
-                tone: "slate",
-                icon: <IconClock />,
-                text: "Our ambition is to expand our business in the oil and gas sector while reducing our environmental effect and boosting our social impact, drawing on our specific purpose and operational experience.",
-              },
-              {
-                heading: "Our vision",
-                tone: "green",
-                icon: <IconHandshake />,
-                text: "Our mission and operational skills in our business model enable us to expand our oil and gas company while reducing our environmental effects and raising social impact.",
-              },
-              {
-                heading: "Our strategy",
-                tone: "red",
-                icon: <IconStar />,
-                text: "In order to realize our vision of a world where sustainable living is the norm, we have invested in a long-term strategy of divisions and brands that generate growth for the good of all stakeholders.",
-              },
-              {
-                heading: "Reliability",
-                tone: "orange",
-                icon: <IconThumbsUp />,
-                text: "Oman Oil Company has a long history of delivering reliable results. We have a vast range of competencies in the petroleum industry and a leading collective global expertise in the subject.",
-              },
-              {
-                heading: "Dependable supplier",
-                tone: "wine",
-                icon: <IconHandshake />,
-                text: "A long history of reliability, a vast range of competencies in the petroleum industry, and a leading collective global expertise in the subject.",
-              },
-            ]}
-          />
-        </div>
+        
+       
       </Section>
     </>
   );
