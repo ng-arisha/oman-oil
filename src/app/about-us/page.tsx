@@ -1,5 +1,7 @@
+import { IconCoinLg, IconCompassLg, IconGearLg, IconOrgChartLg, IconSafeLg } from "@/components/figures/Figures";
 import HeroCarousel from "@/components/HeroCarousel";
 import { Section } from "@/components/Section";
+import SquareFeatureGrid from "@/components/SquareFeatureGrid";
 import type { Metadata } from "next";
 import Image from "next/image";
 
@@ -42,7 +44,40 @@ export default function AboutUsPage() {
           </div>
         </div>
         
-       
+        <SquareFeatureGrid
+          items={[
+            {
+              icon: <IconGearLg />,
+              heading: "Operational Services",
+              text: "Asian countries, is built with professional performance in provision of petrochemicals products services in the field of oil and natural gas production international marketing. Production of petroleum products, Crude oil production. Extraction of oil (associated gas), Provision of drilling services related to the production of oil, gas and gas condensate, Separation and extraction of fractions from oil (associated) gas.",
+            },
+            {
+              icon: <IconCompassLg />,
+              heading: "Comprehensive Experience",
+              text: "Successful experience in profitable operations in small fields with unbalanced development systems; knowledge of the specifics of work in various regions of the world. extensive experience in the implementation of international oil and gas projects, stable long-term relations with leading oil companies in Oman, and the world entirely, conducting research and Distinctively impact synergistic experiences.",
+            },
+            {
+              icon: <IconOrgChartLg />,
+              heading: "Management Implementation",
+              text: "Our deep industry know-how, an individual IT system, the successful implementation of best management practices and the dedication of our employees, we can offer our customers an unrivaled level of service at competitive prices and provide our customers with high-quality domestic and international transportation services, customs clearance, and integrated supply chain solutions.",
+            },
+            {
+              icon: <IconCompassLg />,
+              heading: "Integrated Production System",
+              text: "Integration of the production system allows the Company to improve its competitive ability, ensure efficient and safe production, and, what is most important, contribute to the enhancement of professional competence of the employees and improvement of their working and social conditions.",
+            },
+            {
+              icon: <IconCoinLg />,
+              heading: "State-Of-The-Art Technology",
+              text: "Asian countries, investment in targeted companies in Oman and abroad consists of acquiring a raw material base for production and ensuring a huge growth in our production capacity. The company uses state-of-the-art technology in its exploration work to improve exploration efficiency.",
+            },
+            {
+              icon: <IconSafeLg />,
+              heading: "High Standard Upstream Sector",
+              text: "The Oman Oil Company exploration drilling success rate is approximately 86%. The upstream sector is a strategically important part of the vertically integrated Oman Oil Company, ensuring the smooth operation of the entire company.",
+            },
+          ]}
+        />
       </Section>
     </>
   );

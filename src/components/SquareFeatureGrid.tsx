@@ -7,9 +7,7 @@ export default function SquareFeatureGrid({ items }: { items: SquareFeatureItem[
     <div className="grid gap-10 sm:grid-cols-3">
       {items.map((it) => (
         <div key={it.heading}>
-          <div className="mb-5 flex h-16 w-16 items-center justify-center border border-[rgba(11,11,58,0.18)]">
-            {it.icon}
-          </div>
+          <div className="mb-5">{it.icon}</div>
           <h3 className="mb-3 font-display text-xl text-red">{it.heading}</h3>
           <p className="max-w-[42ch] text-[15px] text-[#4b5068]">{it.text}</p>
         </div>

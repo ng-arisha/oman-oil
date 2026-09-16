@@ -331,3 +331,76 @@ export function IconPhone() {
     </IconWrap>
   );
 }
+
+
+
+/* ---- large indigo icons for feature grids without a badge circle ---- */
+function LargeIndigoWrap({ children }: { children: ReactNode }) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      className="h-14 w-14 stroke-indigo fill-none"
+      strokeWidth={1.6}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {children}
+    </svg>
+  );
+}
+
+export function IconCompassLg() {
+  return (
+    <LargeIndigoWrap>
+      <circle cx="16" cy="16" r="12" />
+      <path d="M20 12 17 17 12 20 15 15Z" />
+    </LargeIndigoWrap>
+  );
+}
+
+export function IconGearLg() {
+  return (
+    <LargeIndigoWrap>
+      <circle cx="16" cy="16" r="4.5" />
+      <path d="M16 6v3M16 23v3M26 16h-3M9 16H6M22.6 9.4l-2.1 2.1M11.5 20.5l-2.1 2.1M22.6 22.6l-2.1-2.1M11.5 11.5 9.4 9.4" />
+    </LargeIndigoWrap>
+  );
+}
+
+export function IconOrgChartLg() {
+  return (
+    <LargeIndigoWrap>
+      <rect x="13" y="4" width="6" height="6" />
+      <line x1="16" y1="10" x2="16" y2="15" />
+      <line x1="7" y1="15" x2="25" y2="15" />
+      <line x1="7" y1="15" x2="7" y2="19" />
+      <line x1="16" y1="15" x2="16" y2="19" />
+      <line x1="25" y1="15" x2="25" y2="19" />
+      <rect x="4" y="19" width="6" height="6" />
+      <rect x="13" y="19" width="6" height="6" />
+      <rect x="22" y="19" width="6" height="6" />
+    </LargeIndigoWrap>
+  );
+}
+
+
+export function IconCoinLg() {
+  return (
+    <LargeIndigoWrap>
+      <circle cx="16" cy="16" r="10" />
+      <circle cx="16" cy="16" r="7" />
+      <path d="M15 12.5h2v7M14.3 12.5 16 11.5" />
+    </LargeIndigoWrap>
+  );
+}
+
+export function IconSafeLg() {
+  return (
+    <LargeIndigoWrap>
+      <rect x="6" y="6" width="20" height="19" rx="2" />
+      <circle cx="16" cy="15" r="4" />
+      <circle cx="16" cy="15" r="1" className="fill-indigo" />
+      <path d="M16 11v1M16 19v1M12 15h1M19 15h1" />
+      <path d="M10 25v2M22 25v2" />
+    </LargeIndigoWrap>
+  );
+}

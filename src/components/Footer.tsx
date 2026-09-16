@@ -49,9 +49,9 @@ export default function Footer() {
               Aktau, Mangistau Region
             </p>
             <p className="mt-3 text-[14.5px] text-[#b9c0d6]">
-              +77 47 465 8669
+              +971 56 322 3743
               <br />
-              info@omanoilcompany.com
+              Info@omanioilcompany.com
             </p>
           </div>
         </div>
